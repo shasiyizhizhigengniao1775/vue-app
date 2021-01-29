@@ -1,10 +1,14 @@
 <template>
   <div>
-    <a-player :audio="audio" :lrc-type="3"></a-player>
+    <a-player :audio="audio" :lrc-type="0"></a-player>
     <ul>
-      <li v-for="(item, index) in playList" :key="item.id" @click="getSong(item.id)">
+      <li
+        v-for="(item, index) in playList"
+        :key="item.id"
+        @click="getSong(item.id)"
+      >
         <span>{{ index + 1 }}</span>
-        <span>{{ item .name}}</span>
+        <span>{{ item.name }}</span>
         <span>{{ item.ar[0].name }}</span>
       </li>
     </ul>
@@ -43,20 +47,21 @@ export default {
         .get("https://bird.ioliu.cn/netease/playlist?id=5462180032")
         .then((res) => {
           this.playList = res.data.playlist.tracks;
+          this.getSong(this.playList[0].id);
         });
     },
-    getSong(id){
+    getSong(id) {
       this.axios
-      .get("https://bird.ioliu.cn/netease/song?id="+id)
-      .then((res)=>{
-        this.audio={
-          name:res.data.data.name,
-          artist:res.data.data.ar[0].name,
-          url:res.data.data.mp3.url,
-          cover:res.data.data.al.picUrl,
-        }
-      })
-    }
+        .get("https://bird.ioliu.cn/netease/song?id=" + id)
+        .then((res) => {
+          this.audio = {
+            name: res.data.data.name,
+            artist: res.data.data.ar[0].name,
+            url: res.data.data.mp3.url,
+            cover: res.data.data.al.picUrl,
+          };
+        });
+    },
   },
 };
 </script>
@@ -65,10 +70,10 @@ export default {
 li {
   display: flex;
   span {
-    flex: 1;
+    flex: 2;
   }
   .title {
-    flex: 2;
+    flex: 3;
   }
 }
 </style>

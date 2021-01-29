@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <ComHeader></ComHeader>
+    <Header></Header>
     <router-view class="main" />
-    <ComFooter></ComFooter>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import ComHeader from "./components/ComHeader";
-import ComFooter from "@/components/ComFooter";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 export default {
   components: {
-    ComHeader,
-    ComFooter,
+    Header,
+    Footer,
   },
 };
 </script>

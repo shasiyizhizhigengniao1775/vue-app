@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     curMenu: {
       name: '剧集',
-      bgColor: '#ff0000'
+      bgColor: '#f99999'
     }
   },
   //mutations 变化；转变

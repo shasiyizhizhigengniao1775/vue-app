@@ -17,7 +17,7 @@ export default {
       this.$router.push("/");
       this.setCurMenu({
         name: "剧集",
-        bgColor: "#ff0000",
+        bgColor: "#f99999",
       });
     },
   },

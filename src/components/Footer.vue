@@ -19,10 +19,10 @@ export default {
   data() {
     return {
       menuList: [
-        { path: "/", name: "剧集", bgColor: "#ff0000" },
-        { path: "/music", name: "音乐", bgColor: "#00ff00" },
-        { path: "/book", name: "书籍", bgColor: "#0000ff" },
-        { path: "/chat", name: "聊天", bgColor: "#f00889" },
+        { path: "/", name: "剧集", bgColor: "#f99999" },
+        { path: "/music", name: "音乐", bgColor: "#555555" },
+        { path: "/book", name: "书籍", bgColor: "#7700ff" },
+        { path: "/chat", name: "聊天", bgColor: "#f07889" },
       ],
     };
   },
