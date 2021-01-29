@@ -53,8 +53,7 @@ export default {
             }
           )
           .then((res) => {
-            // this.tvList = res.data.subject_collection_items;
-            // this.tvList = this.tvList.concat(res.data.subject_collection_items);
+            //加载数据连起来
             this.tvList = [
               ...this.tvList,
               ...res.data.subject_collection_items,
@@ -64,18 +63,18 @@ export default {
       }
     },
     lazyLoad() {
-      // 页面的高度
+      // 
       let htmlDom = document.documentElement;
       let fullH = 0;
-      // 设备的高度
+      // 
       let deviceH = htmlDom.clientHeight;
       console.log(deviceH);
-      // 滚动出去的距离
+      // 
       let scrollT = 0;
       window.onscroll = () => {
         fullH = htmlDom.offsetHeight;
         scrollT = htmlDom.scrollTop;
-        // 滚动到底部
+        // 
         if (fullH == deviceH + scrollT) {
           if (this.start < 40) {
             // 请求下一页数据
@@ -85,7 +84,7 @@ export default {
         }
       };
     },
-    // 跳转电视剧详情页
+    // 
     getDetail(id) {
       this.$router.push("/tvDetail/" + id);
     },
